@@ -10,17 +10,26 @@
     border: solid black 1px;
 }
 
-.content {
+.content
+ {
     border: solid black;
     border-width: 0px 1px 1px 1px;
     margin-bottom: 20px;
     background-color: white;
 }
 
+.table {
+    background-color: white;
+}
+
 #submit {
-    margin: 5px 0px 5px 0px
+    margin: 5px 0px 5px 0px;
 }
 
 body {
     background-image: url(../pics/train1.jpg);
+}
+
+.lineInfo {
+    border-top: solid gray 1px;
 }
