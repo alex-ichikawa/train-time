@@ -1,0 +1,26 @@
+.jumbotron {
+    background-color: #4d4d4d;
+    color: white;
+}
+
+.secHead {
+    background-color: blue;
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+    border: solid black 1px;
+}
+
+.content {
+    border: solid black;
+    border-width: 0px 1px 1px 1px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+#submit {
+    margin: 5px 0px 5px 0px
+}
+
+body {
+    background-image: url(../pics/train1.jpg);
+}
