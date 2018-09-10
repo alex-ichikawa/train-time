@@ -22,6 +22,12 @@ $("#submit").on("click", function() {
     let minTag = $("<td>").html('place holder');
     newTrain.append(minTag);
 
+    console.log("time " + $("#time").val());
+    console.log("date " + new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), $("#time").val().substring(0,2), $("#time").val().substring(3,5)));
+    let n = $("#time").toDateString();
+    n.setMinutes(n.getMinutes() +5)
+    console.log("please work " + n);
+
     $(".trainInfo").append(newTrain);
 
 
@@ -30,3 +36,19 @@ $("#submit").on("click", function() {
     $("#freq").val('');
     }
 })
+
+let now = new Date().getHours();
+console.log("date " + Date());
+console.log("date now " + Date.now());
+console.log("new date " + new Date().toLocaleTimeString());
+console.log("format " + now);
+
+future = function() {
+    var d = new Date();
+    d.setMinutes(d.getMinutes() + 25);
+    console.log("future " + d);
+
+
+}
+future();
+

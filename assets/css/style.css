@@ -33,3 +33,9 @@ body {
 .lineInfo {
     border-top: solid gray 1px;
 }
+
+h4 {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
