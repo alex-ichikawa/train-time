@@ -9,18 +9,32 @@ $("#submit").on("click", function() {
     let timeAdd = Number($("#freq").val());
     let nextTime = '';
     let diff = '';
+    let nextHour = '';
+    let nextMin = '';
 
     //loop adds the frequecy time to the start time until it is greater than the current time. Stores all values in an array
-    for (timeConv; Date.parse(timeConv) < Date.parse(new Date()); timeConv.setMinutes(timeConv.getMinutes() + timeAdd)) {
+    if(Date.parse(timeConv) >= Date.parse(new Date())) {
+        timeArray.push(timeConv);
+    } else {
+        for (timeConv; Date.parse(timeConv) < Date.parse(new Date()); timeConv.setMinutes(timeConv.getMinutes() + timeAdd)) {
         timeArray.push(timeConv);        
-    }
+    }}
 
     //Grabs the last value in the array and converts to 12hr clock
     if (timeArray[timeArray.length -1].getHours() >= 13) {
-        nextTime = `${timeArray[timeArray.length - 1].getHours() - 12} : ${timeArray[timeArray.length - 1].getMinutes()}`;
+        nextHour = timeArray[timeArray.length - 1].getHours() - 12;
     } else {
-        nextTime = `${timeArray[timeArray.length - 1].getHours()} : ${timeArray[timeArray.length - 1].getMinutes()}`;
+        nextHour = timeArray[timeArray.length - 1].getHours();
     }
+    //Adds leading 0 if the minute value is below 10
+    if (timeArray[timeArray.length - 1].getMinutes().toString().length === 1) {
+        nextMin = `0${timeArray[timeArray.length - 1].getMinutes()}`;
+    } else {
+        nextMin = timeArray[timeArray.length - 1].getMinutes();
+    }
+    //combines the hour and min together
+    nextTime = `${nextHour}:${nextMin}`;
+
 
     //calculates the difference in min between the current time and next train time
     function diff_min() {
@@ -29,6 +43,7 @@ $("#submit").on("click", function() {
         //divides by 60 to get minutes
         diff /= 60
         diff = Math.abs(Math.round(diff));
+        console.log(timeArray[timeArray.length - 1].getMinutes().toString().length);
     }
 
     diff_min();
