@@ -48,24 +48,24 @@ $("#submit").on("click", function() {
 
     diff_min();
 
-    let newTrain = $("<tr>")
+    let newRow = $("<tr>")
     let nameTag = $("<td>").html($("#name").val().trim()).attr("class", "lineInfo");
-    newTrain.append(nameTag);
+    newRow.append(nameTag);
 
     let destinationTag = $("<td>").html($("#destination").val().trim()).attr("class", "lineInfo");
-    newTrain.append(destinationTag);
+    newRow.append(destinationTag);
 
     let frequencyTag = $("<td>").html($("#freq").val().trim() + " min").attr("class", "lineInfo");
-    newTrain.append(frequencyTag);
+    newRow.append(frequencyTag);
 
     let nextTag = $("<td>").html(nextTime);
-    newTrain.append(nextTag);
+    newRow.append(nextTag);
 
     let minTag = $("<td>").html(diff);
-    newTrain.append(minTag);
+    newRow.append(minTag);
 
 
-    $(".trainInfo").append(newTrain);
+    $(".trainInfo").append(newRow);
 
     $("#name").val('');
     $("#destination").val('');
