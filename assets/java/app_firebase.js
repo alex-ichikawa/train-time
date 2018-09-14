@@ -94,7 +94,7 @@ function renderTrain(trainArray) {
 $("#submit").on("click", function () {
     event.preventDefault();
     if ($("#name").val() === '' || $("#destination").val() === '' || $("#time").val() === '' || $("#freq").val() === '') {
-        alert("Please enter all info")
+        swal("Please Enter All Info")
     } else {
         let newTrain = {};
         newTrain.name = $("#name").val().trim()
